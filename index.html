@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>temp</title> 
+    
+    <!-- jQuery & ootstarp -->
+    <link data-require="bootstrap-css@3.2.0" data-semver="3.2.0" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    
+    <style>
+    *{
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+}
+
+input[type=checkbox] {
+	clear: both;
+	display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	height: 6em;
+	width: 6em;
+	left: calc(50% - 3em);
+	top: calc(50% - 3em);
+	display: block;
+	text-align: center;
+	line-height: 95px;
+	cursor: pointer;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+input[type="checkbox"] + label:before {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	background: rgb(220, 72, 127);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	-webkit-ransform: scale(0);
+}
+
+input[type="checkbox"] + label:after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	background: white;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	-webkit-transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label svg {
+	-webkit-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+	fill: rgb(220, 72, 127);
+	transform: scale(1.3);
+	-webkit-transform: scale(1.3);
+}
+
+input[type="checkbox"]:checked + label:after {
+	-webkit-animation: like-a 0.3s 0.2s forwards;
+	-moz-animation: like-a 0.3s 0.2s forwards;
+	animation: like-a 0.3s 0.2s forwards;
+}
+
+input[type="checkbox"]:checked + label:before {
+	-webkit-animation: like-a 0.5s 0s forwards;
+	-moz-animation: like-a 0.5s 0s forwards;
+	animation: like-a 0.5s 0s forwards;
+}
+
+label svg {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 35px;
+	fill: rgb(167, 167, 167);
+}
+
+
+
+
+
+
+
+
+
+
+.like {
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.like:before {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	background: rgb(220, 72, 127);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	-webkit-ransform: scale(0);
+}
+.like:after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	background: white;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	-webkit-transform: scale(0);
+}
+
+
+
+
+
+
+.liked svg {
+	-webkit-transition: all 300ms ease-in-out !important;
+	transition: all 300ms ease-in-out !important;
+	fill: rgb(220, 72, 127) !important;
+	transform: scale(1.3) !important;
+	-webkit-transform: scale(1.3) !important;
+}
+
+.liked:after {
+	-webkit-animation: like-a 0.3s 0.2s forwards;
+	-moz-animation: like-a 0.3s 0.2s forwards;
+	animation: like-a 0.3s 0.2s forwards;
+}
+
+.liked:before {
+	-webkit-animation: like-a 0.5s 0s forwards;
+	-moz-animation: like-a 0.5s 0s forwards;
+	animation: like-a 0.5s 0s forwards;
+}
+
+.like svg {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 25px;
+	fill: rgb(167, 167, 167);
+}
+
+
+@-webkit-keyframes like-a {
+100% {
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03);
+	-moz-transform:scale(1.03);
+} }
+@-moz-keyframes like-a {
+100% {
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03);
+	-moz-transform:scale(1.03);
+} }
+@keyframes like-a {
+100% {
+	-webkit-transform:scale(1.03);
+	transform:scale(1.03);
+	-moz-transform:scale(1.03);
+} }
+
+    </style>
+    
+  </head>
+  <body>
+
+
+
+
+
+<div class="like">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z"/>
+</svg>
+</div>
+
+
+<script>
+
+               $(document).ready(function(){
+ 
+                $(".like").click(function(){
+                    $(this).toggleClass("liked");
+                });
+                });
+        
+
+</script>
+  </body>
+</html>
